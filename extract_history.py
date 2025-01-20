@@ -7,7 +7,10 @@ from io import StringIO
 from datetime import datetime
 from pathlib import Path
 
-from config import *
+try:
+    from config_ import *
+except ImportError:
+    from config import *
 
 def get_all_symbol():
     isin_symbols = pd.read_csv('./EQUITY_L.csv')

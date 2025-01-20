@@ -1,6 +1,10 @@
 from extract_history import *
 from main import *
-from config import *
+
+try:
+    from config_ import *
+except ImportError:
+    from config import *
 
 
 def main():

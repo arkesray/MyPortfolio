@@ -3,7 +3,10 @@ import numpy as np
 import janitor as jn
 import matplotlib.pyplot as plt
 
-from config import STOCK_HISTORY_SAVEPATH
+try:
+    from config_ import *
+except ImportError:
+    from config import *
 
 def get_timeframe(date_range=('2018-01-01', '2025-12-31')):
     timeframe = pd.DataFrame({

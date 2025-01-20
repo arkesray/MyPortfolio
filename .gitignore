@@ -2,4 +2,4 @@ env
 Personal
 __pycache__
 StockHistory
-config.py
+config_.py
