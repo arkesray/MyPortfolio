@@ -3,9 +3,9 @@ import numpy as np
 import janitor as jn
 import matplotlib.pyplot as plt
 
-from config import save_path
+from config import STOCK_HISTORY_SAVEPATH
 
-def get_timeframe(date_range=('2020-01-01', '2024-12-31')):
+def get_timeframe(date_range=('2018-01-01', '2025-12-31')):
     timeframe = pd.DataFrame({
         'Date' : pd.date_range(date_range[0], date_range[1]),
     })
@@ -62,7 +62,7 @@ def get_my_symbols(investments):
 
 def update_closingPrice(investments, symbol_list):
     for symbol in symbol_list:
-        symbol_data = pd.read_csv(f'{save_path}{symbol}.NS.csv')[["Date", "Close"]]
+        symbol_data = pd.read_csv(f'{STOCK_HISTORY_SAVEPATH}{symbol}.NS.csv')[["Date", "Close"]]
         symbol_data['Date'] = pd.to_datetime(symbol_data['Date'], format="%Y-%m-%d",)
         symbol_data['SYMBOL'] = '{0}'.format(symbol)
         

@@ -1,13 +1,8 @@
-import sys
 
-config_dict = {
-    "generate_history_symbol" : ["none", "required", "all"][0],
-    "rpt_prefix" : ["","Personal/"][1]
-}
+REPORT_PREFIX = ""
+START_DATE, END_DATE = ('2019-01-01', '2025-12-31')
 
-try:
-    config_dict["generate_history_symbol"] = ["none", "required", "all"][int(sys.argv[1])]
-except:
-    pass
+GENERATE_STOCK_HISTORY = 1
+STOCK_HISTORY_SAVEPATH = './StockHistory/'
+PARALLEL_CORE_COUNT = 8
 
-save_path = './StockHistory/'
